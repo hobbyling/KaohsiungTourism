@@ -1,0 +1,259 @@
+body{
+  background: #f7f7f7;
+}
+.jumbotron{
+  background: url(../img/Hero.png);
+  background-size: cover;
+  height: 380px;
+
+  a{
+    text-decoration: none;
+  }
+
+  h1{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 96px;
+  }
+
+  select{
+    width: 453px;
+    margin: auto;
+    background: rgba(255,255,255,.7);
+    border: 3px solid #fff;
+    border-radius: 0;
+  }
+
+  .hot{
+    width: 800px;
+    background: #fff;
+    box-shadow: 0 2px 4px #f1f1f1;
+    position: absolute;
+    top: 352px;
+    left: calc(50% - 400px);
+    padding: 18px 0;
+
+    .btngroup{
+      .btn{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.result{
+  margin-top: 9rem;
+  .divide{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .line{
+      display: inline-flex;
+      width: calc(50% - 12px);
+      border-bottom: 1px dashed #559AC8;
+    }
+    .arrow{
+      height: 24px;
+      width: 24px;
+      display: inline-flex;
+      border-radius: 50%;
+      border: 1px solid #559AC8;
+
+      background: #f7f7f7;
+      img{
+        height: 12px;
+        width: 12px;
+        margin: auto;
+      }
+    }
+  }
+
+  .district-name{
+    text-align: center;
+    margin: 75px 0 25px 0;
+    color: #8A82CC;
+  }
+
+
+  .list{
+    .card{
+      margin-bottom: 35px;
+      transition: box-shadow .6s;
+
+      &:hover{
+        box-shadow: 3px 3px 8px 2px rgba(0,0,0,.5);
+      }
+
+      .card-img{
+        height: 155px;
+        overflow: hidden;
+        img{
+          width: 100%;
+        }
+      }
+
+      .card-img-overlay{
+        height: 155px;
+
+
+        .name{
+          color: #fff;
+          font-size: 24px;
+          position: absolute;
+          bottom: 0;
+          width: 70%;
+        }
+
+        .zone{
+          color: #fff;
+          position: absolute;
+          bottom: 0;
+          right: 1.25rem;
+        }
+      }
+
+      .card-body{
+        .content{
+          margin-bottom: 5px;
+
+          &.telDiv{
+            display: inline-block;
+          }
+          &.ticketDiv{
+            display: inline-block;
+            float: right;
+          }
+
+          img{
+            margin-right: 5px;
+            vertical-align: top;
+          }
+
+          span{
+            display: inline-block;
+            margin-left: 5px;
+          }
+
+          .opentime, .add{
+            width: calc(98% - 25px);
+          }
+        }
+
+        .more{
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+nav.fix-bottom{
+  background: #559AC8;
+  height: 90px;
+  color: #fff;
+
+  div{
+    width: 100%;
+    text-align: center;
+  }
+
+  .datasrc{
+    color: #FFD366;
+    text-decoration: none;
+  }
+}
+
+.gotop{
+  background: url(../img/btn_goTop.png) no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: fixed;
+  z-index: 999;
+  right: 5vw;
+  bottom: 5vh;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+
+  &.is-visible, &.is-fade-out{
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+  }
+
+  &.is-visible{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.is-fade-out{
+    opacity: .5;
+  }
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  .jumbotron{
+
+    select{
+      width: 90%;
+    }
+
+    .hot{
+      width: 100%;
+      left: auto;
+      top: 325px;
+
+      .btngroup{
+        .btn{
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+.modal{
+  .modal-body{
+    .modalImg{
+      height: 200px;
+      overflow: hidden;
+      img{
+        vertical-align: bottom;
+        width: 100%;
+      }
+    }
+
+    .modalInfo{
+      .description{
+        margin: 10px 0;
+        text-align: justify;
+      }
+
+      .content{
+        margin: 5px;
+
+        img{
+          margin-right: 5px;
+          vertical-align: top;
+        }
+
+        span{
+          display: inline-block;
+          width: calc(98% - 25px);
+        }
+      }
+    }
+  }
+}
