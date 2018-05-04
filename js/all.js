@@ -105,7 +105,9 @@ xhr.onload = function(){
           var spotTicket = datalist[i].Ticketinfo;
           var spotImg = datalist[i].Picture1;
           var spotDescription = datalist[i].Description;
-          var spotRemark = datalist[i].Remarks
+          var spotRemark = datalist[i].Remarks;
+          var spotLat = datalist[i].Py;
+          var spotLng = datalist[i].Px;
 
           var spotWebsite_has = '';
 
@@ -116,24 +118,41 @@ xhr.onload = function(){
           if(spotWebsite == ''){
             spotWebsite_has = '';
           }else{
-            spotWebsite_has = '<div class="content"><img src="img/icons_website.png" alt=""><span class="website"> <a target="_blank" href='+ spotWebsite +'> 官方網站</a></span></span></div>';
+            spotWebsite_has = '<div class="content col-12 col-md-6"><img src="img/icons_website.png" alt=""><span class="website"> <a target="_blank" href='+ spotWebsite +'> 官方網站</a></span></span></div>';
           }
 
-          var str = '<div class="modalImg"><img src="'+ spotImg +'" alt=""></div><div class="modalInfo row"><div class="description col-12">'+ spotDescription +'</div><div class="col-12 col-md-6"><div class="content"><img src="img/icons_clock.png" alt=""><span class="opentime"> '+ spotTime +'</span></div><div class="content"><img src="img/icons_pin.png" alt=""><span class="add"> '+ spotAdd +'</span></div><div class="content"><img src="img/icons_phone.png" alt=""><span class="tel">  '+ spotTel +'</span></div><div class="content"><img src="img/icons_tag.png" alt=""><span class="ticketinfo"> '+ spotTicket +'</span></div>'+ spotWebsite_has +'<div class="content"><img src="img/icons_remark.png" alt=""><span class="remark"> '+ spotRemark +'</div></div><div class="map col-12 col-md-6"></div></div></div>';
+          var str = '<div class="modalImg"><img src="'+ spotImg +'" alt=""></div><div class="modalInfo row justify-content-center"><div class="description col-12">'+ spotDescription +'</div><div class="col-12 row"><div class="content col-12 col-md-6"><img src="img/icons_clock.png" alt=""><span class="opentime"> '+ spotTime +'</span></div><div class="content col-12 col-md-6"><img src="img/icons_phone.png" alt=""><span class="tel"> '+ spotTel +'</span></div><div class="content col-12 col-md-6"><img src="img/icons_tag.png" alt=""><span class="ticketinfo"> '+ spotTicket +'</span></div>'+ spotWebsite_has +'<div class="content col-12 col-md-6"><img src="img/icons_pin.png" alt=""><span class="add"> '+ spotAdd +'</span></div><div class="content col-12 col-md-6"><img src="img/icons_remark.png" alt=""><span class="remark"> '+ spotRemark +'</div></div><div class="map col-12" id="'+ chooseId +'"></div></div></div>';
 
           modalTitle.innerHTML = spotName + '('+ spotZone +')';
           modalbody.innerHTML = str;
+          initMap(spotLat, spotLng, chooseId);
         }
       }
+    }
 
-      console.log(chooseId);
+
+    //---google地圖---
+    var map
+    function initMap(spotlat,spotlng,spotid){
+
+      var mapLat = Number(spotlat);
+      var mapLng = Number(spotlng);
+
+      map = new google.maps.Map(document.getElementById(spotid),{
+        zoom: 15,
+        center:{ lat:mapLat, lng:mapLng}
+      });
+
+      var marker = new google.maps.Marker({
+        position: {lat:mapLat, lng:mapLng},
+        map:map
+      })
     }
 
     //---gotop---
     var goTop = document.querySelector('#gotop');
 
     window.addEventListener('scroll', show);
-    // goTop.addEventListener('click',cdTop);
 
     function show(){
       if(window.scrollY >= 300){

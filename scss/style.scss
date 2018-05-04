@@ -242,7 +242,7 @@ nav.fix-bottom{
       }
 
       .content{
-        margin: 5px;
+        margin-bottom: 10px;
 
         img{
           margin-right: 5px;
@@ -253,6 +253,10 @@ nav.fix-bottom{
           display: inline-block;
           width: calc(98% - 25px);
         }
+      }
+
+      .map{
+        height: 300px;
       }
     }
   }

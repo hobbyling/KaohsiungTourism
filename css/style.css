@@ -175,10 +175,13 @@ nav.fix-bottom {
   text-align: justify; }
 
 .modal .modal-body .modalInfo .content {
-  margin: 5px; }
+  margin-bottom: 10px; }
   .modal .modal-body .modalInfo .content img {
     margin-right: 5px;
     vertical-align: top; }
   .modal .modal-body .modalInfo .content span {
     display: inline-block;
     width: calc(98% - 25px); }
+
+.modal .modal-body .modalInfo .map {
+  height: 300px; }
