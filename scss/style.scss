@@ -41,32 +41,34 @@ body{
   }
 }
 
-.result{
-  margin-top: 9rem;
-  .divide{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .line{
-      display: inline-flex;
-      width: calc(50% - 12px);
-      border-bottom: 1px dashed #559AC8;
-    }
-    .arrow{
-      height: 24px;
-      width: 24px;
-      display: inline-flex;
-      border-radius: 50%;
-      border: 1px solid #559AC8;
+.divide{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .line{
+    display: inline-flex;
+    width: calc(50% - 12px);
+    border-bottom: 1px dashed #559AC8;
+  }
+  .arrow{
+    height: 24px;
+    width: 24px;
+    display: inline-flex;
+    border-radius: 50%;
+    border: 1px solid #559AC8;
 
-      background: #f7f7f7;
-      img{
-        height: 12px;
-        width: 12px;
-        margin: auto;
-      }
+    background: #f7f7f7;
+    img{
+      height: 12px;
+      width: 12px;
+      margin: auto;
     }
   }
+}
+
+.result{
+  margin-top: 9rem;
+
 
   .district-name{
     text-align: center;
@@ -236,24 +238,28 @@ nav.fix-bottom{
     }
 
     .modalInfo{
-      .description{
-        margin: 10px 0;
-        text-align: justify;
-      }
-
       .content{
-        margin-bottom: 10px;
-
-        img{
-          margin-right: 5px;
-          vertical-align: top;
-        }
-
-        span{
-          display: inline-block;
-          width: calc(98% - 25px);
-        }
+        margin: 5px 0;
       }
+      .description{
+        text-align: justify;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #989898;
+        line-height: 2;
+      }
+
+
+      img{
+        margin-right: 5px;
+        margin-top: 5px;
+        vertical-align: top;
+      }
+
+      span{
+        display: inline-block;
+        width: calc(98% - 25px);
+      }
+
 
       .map{
         height: 300px;

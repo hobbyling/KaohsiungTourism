@@ -29,36 +29,37 @@ body {
     .jumbotron .hot .btngroup .btn {
       width: 100%; }
 
+.divide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .divide .line {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: calc(50% - 12px);
+    border-bottom: 1px dashed #559AC8; }
+  .divide .arrow {
+    height: 24px;
+    width: 24px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    border-radius: 50%;
+    border: 1px solid #559AC8;
+    background: #f7f7f7; }
+    .divide .arrow img {
+      height: 12px;
+      width: 12px;
+      margin: auto; }
+
 .result {
   margin-top: 9rem; }
-  .result .divide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    .result .divide .line {
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      width: calc(50% - 12px);
-      border-bottom: 1px dashed #559AC8; }
-    .result .divide .arrow {
-      height: 24px;
-      width: 24px;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      border-radius: 50%;
-      border: 1px solid #559AC8;
-      background: #f7f7f7; }
-      .result .divide .arrow img {
-        height: 12px;
-        width: 12px;
-        margin: auto; }
   .result .district-name {
     text-align: center;
     margin: 75px 0 25px 0;
@@ -170,18 +171,23 @@ nav.fix-bottom {
     vertical-align: bottom;
     width: 100%; }
 
-.modal .modal-body .modalInfo .description {
-  margin: 10px 0;
-  text-align: justify; }
-
 .modal .modal-body .modalInfo .content {
-  margin-bottom: 10px; }
-  .modal .modal-body .modalInfo .content img {
-    margin-right: 5px;
-    vertical-align: top; }
-  .modal .modal-body .modalInfo .content span {
-    display: inline-block;
-    width: calc(98% - 25px); }
+  margin: 5px 0; }
+
+.modal .modal-body .modalInfo .description {
+  text-align: justify;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #989898;
+  line-height: 2; }
+
+.modal .modal-body .modalInfo img {
+  margin-right: 5px;
+  margin-top: 5px;
+  vertical-align: top; }
+
+.modal .modal-body .modalInfo span {
+  display: inline-block;
+  width: calc(98% - 25px); }
 
 .modal .modal-body .modalInfo .map {
   height: 300px; }
